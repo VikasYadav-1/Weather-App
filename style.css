@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #e8f1ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+.box {
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.2rem rgba(0,0, 0, 0.2);
+    background-color: #a5bbdd;
+    position: relative;
+    overflow: hidden;
+    padding: 4rem;
+    margin: 1rem;
+}
+
+.wave {
+    opacity: 0.3;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    background: white;
+    width: 50rem;
+    height: 50rem;
+    margin-left: -25rem;
+    margin-top: -25rem;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3s infinite linear;
+    z-index: 1;
+}
+
+.-three {
+    animation: drift 5s infinite linear;
+    opacity: 0.2;
+    z-index: 2;
+}
+
+.-two {
+    animation: drift 7s infinite linear;
+    opacity: 0.1;
+    z-index: 3;
+}
+
+@keyframes drift {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.search {
+    margin: 0 auto;
+    text-align: center;
+}
+.searchbar {
+    width: 80%;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #e8f1ff;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    font-weight: 400;
+}
+
+.searchbar:focus {
+    outline: none;
+}
+button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #e8f1ff;
+    color: #75a1e2;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-5px);
+}
+
+.desc {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.info {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    z-index: 4;
+}
+
+.location {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 3rem;
+    color: #0e233f;
+}
+
+.fa-street-view {
+    animation: moves 3s linear infinite alternate;
+}
+
+@keyframes moves {
+    from {
+        transform: translateX(-0.5rem);
+    }
+
+    to {
+        transform: translateX(0.5rem);
+    }
+}
+
+#date {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #57606f;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.temp {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 3rem;
+    color: #0e233f;
+}
+
+.temp-min-max {
+    text-align: center;
+    margin-top: 0.3rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #57606f;
+}
+
+.weathercon {
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fas-anime 3s linear infinite alternate;
+}
+
+@keyframes fas-anime {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.dummy {
+    visibility: hidden;
+}
+
+.dummy:after {
+    visibility: visible;
+    content: "Loading...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.ftr {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.git {
+    position: relative;
+    z-index: 10;
+    margin: 0 auto;
+    width: fit-content;
+    background-color: #e8f1ff;
+    padding: 0.5rem 2rem;
+    transition: all 0.2s ease-in-out;
+    border-radius: 1rem;
+}
+
+.git a {
+    text-decoration: none;
+    color: #75a1e2;
+}
+
+@media (max-width:600px) {
+    .box {
+        padding: 2rem 1rem;
+        /* width: 90vw;
+        height: 80vh; */
+    }
+
+    .location {
+        font-size: 1.5rem;
+    }
+    .temp {
+        font-size: 1.5rem;
+    }
+
+    .wave {
+        top: 85%;
+    }
+
+    #weathercon {
+        font-size: 5em;
+    }
+    #date {
+        font-size: 0.8rem;
+    }
+    .info {
+        font-size: 1.5rem;
+    }
+    .temp-min-max {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width:500px) {
+    .wave {
+        top: 115%;
+    }
+}
